@@ -4,8 +4,9 @@ pipeline {
 stage('Prepare') {	
 	steps {
 		checkout scm
-       }        
-  stage('Build') {
+          }
+         }
+        stage('Build') {
             agent {
                 docker {
                     image 'maven'
