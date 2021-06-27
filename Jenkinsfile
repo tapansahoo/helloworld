@@ -15,7 +15,7 @@ stage('Prepare') {
                 }
             }
             steps {
-                sh 'mvn -version'
+                sh 'mvn install'
             }
         }
     }
