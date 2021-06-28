@@ -1,6 +1,6 @@
 FROM openjdk:11
 
-COPY  target/helloWorld-*.jar /helloWorld.jar
+COPY  target/helloworld-1.0-SNAPSHOT.jar /helloWorld.jar
 
 EXPOSE 3333
 
