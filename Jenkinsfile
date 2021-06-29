@@ -22,18 +22,20 @@ pipeline {
         stage ('image'){
             
             steps {   
-                script {           
+                script {   
+
+            docker.withRegistry('https://hub.docker.com', 'dockerhub')   {    
 
             def customImage = docker.build("tapanjeet/hello_world:${env.BUILD_ID}")
-            customImage.inside {
-            sh 'make test'
+            customImage.push ()
+            
             }
-        }
              
              
              
              }
 
+           }
         }
      
        stage ('run'){
@@ -49,7 +51,7 @@ pipeline {
         stage ('push image'){
 
             steps {
-                echo 'push image'
+                
 
             }
 
