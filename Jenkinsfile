@@ -22,7 +22,7 @@ pipeline {
         stage ('image'){
             
             steps {   
-                scripts {           
+                script {           
 
             def customImage = docker.build("tapanjeet/hello_world:${env.BUILD_ID}")
             customImage.inside {
