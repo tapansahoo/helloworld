@@ -1,10 +1,11 @@
 pipeline {
     agent any
     stages {     
-stage('Prepare') {	
-	steps {
-		checkout scm
-          }
+        stage('Prepare') {	
+	        steps {
+		        
+                checkout scm
+             }
          }
         stage('Build') {
             agent {
@@ -18,5 +19,26 @@ stage('Prepare') {
                 sh 'mvn install'
             }
         }
+        stage ('image'){
+            
+            step {
+
+                sh 'docker build -t  hello_world .'
+
+             }
+
+        }
+     
+       stage ('run'){
+            
+            step {
+
+                sh 'docker run --rm hello_world'
+
+             }
+
+        }
+
     }
 }
+© 2021 GitHub, Inc.
