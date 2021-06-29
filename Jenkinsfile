@@ -51,7 +51,7 @@ pipeline {
         stage ('push image'){
 
             steps {
-                
+               echo 'hello' 
 
             }
 
