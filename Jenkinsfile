@@ -21,7 +21,7 @@ pipeline {
         }
         stage ('image'){
             
-            step {
+            steps {
 
                 sh 'docker build -t  hello_world .'
 
@@ -31,7 +31,7 @@ pipeline {
      
        stage ('run'){
             
-            step {
+            steps {
 
                 sh 'docker run --rm hello_world'
 
