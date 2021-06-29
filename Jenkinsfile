@@ -21,10 +21,17 @@ pipeline {
         }
         stage ('image'){
             
-            steps {
+            steps {   
+                scripts {           
 
-                sh 'docker build -t  hello_world .'
-
+            def customImage = docker.build("tapanjeet/hello_world:${env.BUILD_ID}")
+            customImage.inside {
+            sh 'make test'
+            }
+        }
+             
+             
+             
              }
 
         }
@@ -39,5 +46,16 @@ pipeline {
 
         }
 
+        stage ('push image'){
+
+            steps {
+                
+
+            }
+
+
+        }
+    
+    
     }
 }
