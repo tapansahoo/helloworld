@@ -28,7 +28,7 @@
         </plugin>
                  
             <plugin>
-                <groupId>org.apache.maven.plugins</grocom.example.upId>
+                <groupId>org.apache.maven.plugins</grouId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>2.4</version>
                 <configuration>
