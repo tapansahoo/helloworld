@@ -24,7 +24,7 @@ pipeline {
             steps {   
                 script {   
 
-            docker.withRegistry('https://hub.docker.com', 'dockerhub')   {    
+            docker.withRegistry('hub.docker.com', 'dockerhub')   {    
 
             def customImage = docker.build("tapanjeet/hello_world:${env.BUILD_ID}")
             customImage.push ()
